@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+
+    /* NUEVO: fondo inspirado en el logo del Mackay */
+    background: linear-gradient(180deg, #0a3d62, #60a3bc);
+    color: white;
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+}
+
+/* Logo del Mackay */
+header img {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    height: 85px;
+
+    /* Para que se vea integrado y no “pegado” */
+    filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.sub {
+    margin-top: 8px;
+    color: #e6e6e6;
+    font-size: 1.1rem;
+}
+
+
+/* --- GRID DE LOCALES --- */
+.grid {
+    display: grid;
+    gap: 20px;
+    padding: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* --- TARJETAS --- */
+.card {
+    background: rgba(255, 255, 255, 0.15);  /* semi transparente */
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 16px;
+
+    /* Sombra más elegante */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.card p {
+    margin: 0;
+    color: #f0f0f0;
+}
+
+/* ETIQUETAS DE CATEGORÍA */
+.tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    background: rgba(255,255,255,0.25);
+    color: white;
+    backdrop-filter: blur(4px);
+}
+/* --- HEADER --- */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+    position: relative;
+}
+
+/* NUEVO CONTENEDOR ARMÓNICO DEL LOGO */
+.logo-wrap {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* círculo suave para integrar el logo */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+
+    border-radius: 18px; /* cuadrado redondeado tipo tarjeta */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* LOGO DENTRO DEL CONTENEDOR */
+.logo-wrap img {
+    height: 75px;
+    opacity: 0.93; /* se integra con el fondo */
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
