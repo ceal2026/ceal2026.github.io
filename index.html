@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locales con Descuento - CEAL</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+
+<body>
+    <div id="perfil" style="padding:20px; border-bottom:2px solid #ccc;">
+  <h1 id="nombre">Nombre</h1>
+  <p id="curso">Curso</p>
+  <p id="id">ID</p>
+  <img id="foto" src="" width="120">
+</div>
+
+   <header>
+    <div class="logo-wrap">
+        <img src="mackay-logo.webp" alt="Mackay Logo">
+    </div>
+
+    <h1>Locales con Descuento</h1>
+    <p class="sub">Tarjeta de Beneficios CEAL 2026</p>
+</header>
+
+
+    <section class="grid">
+        <!-- EJEMPLO DE LOCAL -->
+        <div class="card">
+            <h2>McDonald's</h2>
+            <p>15% de descuento</p>
+            <span class="tag">Comida Rápida</span>
+        </div>
+
+        <div class="card">
+            <h2>Starbucks</h2>
+            <p>10% de descuento</p>
+            <span class="tag">Café</span>
+        </div>
+
+        <div class="card">
+            <h2>Cine Hoyts</h2>
+            <p>Entrada a precio reducido</p>
+            <span class="tag">Entretenimiento</span>
+        </div>
+
+        <div class="card">
+    <h2>Pizzería Roma</h2>
+    <p>20% de descuento</p>
+    <span class="tag">Comida</span>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  const alumnos = {
+    "1": {
+      nombre: "Andrés Larsen",
+      curso: "3B",
+      foto: "fotos/andres.jpg"
+    },
+    "2": {
+      nombre: "Juan Pérez",
+      curso: "2A",
+      foto: "fotos/juan.jpg"
+    }
+  };
+
+  const perfil = document.getElementById("perfil");
+
+  if (id && alumnos[id]) {
+    document.getElementById("nombre").textContent = alumnos[id].nombre;
+    document.getElementById("curso").textContent = alumnos[id].curso;
+    document.getElementById("id").textContent = "ID: " + id;
+    document.getElementById("foto").src = alumnos[id].foto;
+  } else {
+    perfil.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
