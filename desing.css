@@ -90,14 +90,26 @@ h1 {
     color: white;
     backdrop-filter: blur(4px);
 }
-/* --- HEADER --- */
+
 header {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 120px 20px 40px; /* 🔥 antes era menos */
     position: relative;
 }
 
 /* NUEVO CONTENEDOR ARMÓNICO DEL LOGO */
+.logo-wrap {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     /* círculo suave para integrar el logo */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4px);
