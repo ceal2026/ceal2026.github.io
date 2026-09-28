@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locales con Descuento - CEAL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --navy-deep:#0F2749;
+  --navy-mid:#1A3F6B;
+  --blue-accent:#014579;
+  --white:#FFFFFF;
+  --mist:#EEF2F6;
+  --line:#D8E1EA;
+  --ink:#0F2749;
+  --muted:#5B7189;
+  --gold:#B08D57;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+body{
+  font-family:'Inter', sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  min-height:100vh;
+}
+
+/* ---------- HEADER ---------- */
+header{
+  background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+  padding:36px 24px 44px 24px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  right:-60px;
+  bottom:-80px;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+}
+
+.logo-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom:14px;
+}
+
+.logo-wrap img{
+  height:44px;
+  width:auto;
+  object-fit:contain;
+}
+
+header h1{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+  letter-spacing:-.01em;
+}
+
+header .sub{
+  font-size:12.5px;
+  color:var(--gold);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-top:6px;
+}
+
+/* ---------- PERFIL ---------- */
+#perfil{
+  max-width:520px;
+  margin:-28px auto 0 auto;
+  background:var(--white);
+  border-radius:16px;
+  box-shadow:0 1px 2px rgba(15,39,73,.06), 0 18px 34px -16px rgba(15,39,73,.28);
+  padding:22px 22px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  position:relative;
+  z-index:2;
+}
+
+#perfil .avatar-wrap{
+  flex-shrink:0;
+}
+
+#perfil img#foto{
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--mist);
+}
+
+#perfil .avatar-fallback{
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  background: radial-gradient(circle at 32% 28%, var(--navy-mid), var(--navy-deep));
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Space Grotesk', sans-serif;
+  font-size:24px;
+  font-weight:600;
+  flex-shrink:0;
+}
+
+#perfil .info{ min-width:0; }
+
+#perfil h1#nombre{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--ink);
+  line-height:1.25;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+#perfil .meta-line{
+  display:flex;
+  gap:10px;
+  margin-top:6px;
+  flex-wrap:wrap;
+}
+
+#perfil .meta-line p{
+  font-size:11.5px;
+  color:var(--muted);
+  background:var(--mist);
+  padding:3px 10px;
+  border-radius:20px;
+  font-weight:500;
+}
+
+#perfil.hidden{ display:none; }
+
+/* ---------- GRID ---------- */
+.section-title{
+  max-width:900px;
+  margin:40px auto 16px auto;
+  padding:0 20px;
+}
+
+.section-title h2{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:16px;
+  font-weight:600;
+  color:var(--navy-deep);
+}
+
+.section-title p{
+  font-size:12.5px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.grid{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 20px 60px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+  gap:16px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px;
+  transition:box-shadow .15s ease, transform .15s ease;
+}
+
+.card:hover{
+  box-shadow:0 10px 24px -12px rgba(15,39,73,.22);
+  transform:translateY(-2px);
+}
+
+.card h2{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:15.5px;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+
+.card p{
+  font-size:20px;
+  font-weight:700;
+  font-family:'Space Grotesk', sans-serif;
+  color:var(--blue-accent);
+  margin-bottom:12px;
+}
+
+.card .tag{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:#FBF6EF;
+  padding:4px 10px;
+  border-radius:20px;
+}
+
+footer{
+  text-align:center;
+  padding:0 20px 40px 20px;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.04em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <img src="mackay-logo.webp" alt="Mackay Logo">
+  </div>
+  <h1>Locales con Descuento</h1>
+  <p class="sub">Tarjeta de beneficios CEAL 2026</p>
+</header>
+
+<div id="perfil" class="hidden">
+  <div class="avatar-wrap">
+    <img id="foto" src="" alt="" style="display:none;">
+    <div id="avatarFallback" class="avatar-fallback" style="display:none;"></div>
+  </div>
+  <div class="info">
+    <h1 id="nombre">Nombre</h1>
+    <div class="meta-line">
+      <p id="curso">Curso</p>
+      <p id="id">ID</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">
+  <h2>Comercios asociados</h2>
+  <p>Presenta tu tarjeta o esta pantalla en el local para obtener el descuento.</p>
+</div>
+
+<section class="grid">
+  <div class="card">
+    <h2>McDonald's</h2>
+    <p>15% dcto.</p>
+    <span class="tag">Comida rápida</span>
+  </div>
+
+  <div class="card">
+    <h2>Starbucks</h2>
+    <p>10% dcto.</p>
+    <span class="tag">Café</span>
+  </div>
+
+  <div class="card">
+    <h2>Cine Hoyts</h2>
+    <p>Entrada reducida</p>
+    <span class="tag">Entretenimiento</span>
+  </div>
+
+  <div class="card">
+    <h2>Pizzería Roma</h2>
+    <p>20% dcto.</p>
+    <span class="tag">Comida</span>
+  </div>
+</section>
+
+<footer>Centro de Alumnos · #MakeItHappen</footer>
+
+<script>
+  async function cargarPerfil(){
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const perfil = document.getElementById("perfil");
+
+    if(!id) return; // se queda oculto
+
+    let alumnos;
+    try{
+      const res = await fetch("./students.json", {cache:"no-store"});
+      alumnos = await res.json();
+    }catch(err){
+      console.error("No se pudo cargar students.json", err);
+      return;
+    }
+
+    const datos = alumnos[id];
+    if(!datos) return;
+
+    document.getElementById("nombre").textContent = datos.nombre;
+    document.getElementById("curso").textContent = datos.curso;
+    document.getElementById("id").textContent = "ID: " + id;
+
+    const fotoEl = document.getElementById("foto");
+    const fallbackEl = document.getElementById("avatarFallback");
+
+    if(datos.foto){
+      fotoEl.src = datos.foto;
+      fotoEl.style.display = "block";
+      fallbackEl.style.display = "none";
+    } else {
+      const inicial = (datos.nombre || "?").trim().charAt(0).toUpperCase();
+      fallbackEl.textContent = inicial;
+      fallbackEl.style.display = "flex";
+      fotoEl.style.display = "none";
+    }
+
+    perfil.classList.remove("hidden");
+  }
+
+  cargarPerfil();
+</script>
+
+</body>
+</html>
