@@ -1,0 +1,32 @@
+{
+  "101": {
+    "nombre": "Benjamin Garcia",
+    "curso": "3 Medio B",
+    "vencimiento": "01/03/2027"
+  },
+  "102": {
+    "nombre": "Hoku Atan",
+    "curso": "3 Medio C",
+    "vencimiento": "01/03/2027"
+  },
+  "103": {
+    "nombre": "Jose Pablo Urrutia",
+    "curso": "3 Medio B",
+    "vencimiento": "01/03/2027"
+  },
+  "104": {
+    "nombre": "Andres Larsen",
+    "curso": "2 Medio",
+    "vencimiento": "01/03/2027"
+  },
+  "105": {
+    "nombre": "Maximiliano Melotti",
+    "curso": "3 Medio C",
+    "vencimiento": "01/03/2027"
+  },
+  "106": {
+    "nombre": "Nicolas Arce",
+    "curso": "3 Medio B",
+    "vencimiento": "01/03/2027"
+  }
+}
